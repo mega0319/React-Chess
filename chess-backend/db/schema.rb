@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802224854) do
+ActiveRecord::Schema.define(version: 20170802233938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "board_games", force: :cascade do |t|
+  create_table "board_pieces", force: :cascade do |t|
+    t.integer "board_id"
+    t.integer "piece_id"
+    t.boolean "killed", default: false
+  end
+
+  create_table "boards", force: :cascade do |t|
     t.string "name"
     t.string "player1"
     t.string "player2"
-  end
-
-  create_table "killed_pieces", force: :cascade do |t|
-    t.integer "board_id"
-    t.integer "piece_id"
   end
 
   create_table "messages", force: :cascade do |t|

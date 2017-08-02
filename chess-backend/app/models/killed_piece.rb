@@ -1,3 +1,0 @@
-class KilledPiece < ApplicationRecord
-
-end
