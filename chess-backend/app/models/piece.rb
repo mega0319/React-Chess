@@ -1,6 +1,3 @@
 class Piece < ApplicationRecord
-	has_many :boards
-
-
+	belongs_to :board_piece
 end
-

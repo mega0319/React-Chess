@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802233938) do
+ActiveRecord::Schema.define(version: 20170808183857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "board_piece_positions", force: :cascade do |t|
+    t.integer "turn_number"
+    t.integer "position_id"
+    t.integer "board_piece_id"
+  end
 
   create_table "board_pieces", force: :cascade do |t|
     t.integer "board_id"
@@ -40,14 +46,6 @@ ActiveRecord::Schema.define(version: 20170802233938) do
 
   create_table "positions", force: :cascade do |t|
     t.string "position"
-    t.integer "piece_id"
-  end
-
-  create_table "turns", force: :cascade do |t|
-    t.integer "board_id"
-    t.integer "turn_number"
-    t.integer "piece_id"
-    t.integer "position_id"
   end
 
 end
