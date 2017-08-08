@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+def seed_positions
+  letters = ["A", "B", "C", "D", "E", "F", "G" , "H"]
+  nums = [1,2,3,4,5,6,7,8]
+  positions = []
+
+  letters.each do |letter|
+    nums.each do |num|
+      pos = letter += num.to_s
+      positions.push(pos)
+    end
+  end
+
+  positions.each do |position|
+    Position.create(position: position)
+  end
+
+end
