@@ -54,5 +54,6 @@ def seed_pieces
 				Piece.create(name: "bishop", white: true)
 				Piece.create(name: "bishop", white: false)
 			end
+		end
 	end
 end
